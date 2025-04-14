@@ -1,0 +1,55 @@
+.notification-center {
+  @apply w-full max-w-md;
+}
+
+.notification-header {
+  @apply flex items-center justify-between p-4 border-b border-background-elevated;
+}
+
+.notification-title {
+  @apply text-xl font-semibold text-text-primary flex items-center gap-2;
+}
+
+.notification-badge {
+  @apply ml-2;
+}
+
+.notification-clear-btn {
+  @apply text-sm text-text-secondary hover:text-text-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.notification-list {
+  @apply divide-y divide-background-elevated max-h-[400px] overflow-y-auto;
+}
+
+.notification-item {
+  @apply flex items-start justify-between p-4 cursor-pointer hover:bg-background-elevated/50 transition-colors;
+}
+
+.notification-item.unread {
+  @apply bg-background-elevated/20;
+}
+
+.notification-content {
+  @apply flex-1 mr-4;
+}
+
+.notification-item-title {
+  @apply text-base font-medium text-text-primary mb-1;
+}
+
+.notification-message {
+  @apply text-sm text-text-secondary mb-2;
+}
+
+.notification-time {
+  @apply text-xs text-text-secondary;
+}
+
+.notification-type-badge {
+  @apply capitalize;
+}
+
+.notification-empty {
+  @apply p-4 text-center text-text-secondary;
+}

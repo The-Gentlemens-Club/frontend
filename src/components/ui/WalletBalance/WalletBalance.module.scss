@@ -1,0 +1,40 @@
+
+.wallet-balance {
+  @apply p-4;
+}
+
+.wallet-balance-title {
+  @apply text-lg font-semibold mb-4 text-text-primary;
+}
+
+.wallet-balance-list {
+  @apply space-y-3;
+}
+
+.wallet-balance-item {
+  @apply flex justify-between items-center py-2 border-b border-background-elevated last:border-0;
+}
+
+.token-info {
+  @apply flex items-center gap-2;
+}
+
+.token-icon {
+  @apply w-6 h-6 rounded-full;
+}
+
+.token-symbol {
+  @apply text-text-primary font-medium;
+}
+
+.token-values {
+  @apply flex flex-col items-end;
+}
+
+.token-balance {
+  @apply text-text-primary font-medium;
+}
+
+.token-usd {
+  @apply text-sm text-text-secondary;
+}

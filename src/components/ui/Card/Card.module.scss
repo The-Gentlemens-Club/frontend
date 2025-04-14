@@ -1,0 +1,8 @@
+
+.card {
+  @apply bg-background-paper rounded-lg p-6 transition-all duration-200;
+}
+
+.card.hoverable {
+  @apply hover:bg-background-elevated cursor-pointer;
+}

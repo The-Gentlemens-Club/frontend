@@ -1,0 +1,36 @@
+
+.game-settings {
+  padding: 1.5rem;
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--background-elevated);
+    border-radius: 0.5rem;
+
+    span {
+      font-size: 0.875rem;
+      color: var(--text-primary);
+    }
+  }
+
+  &__save {
+    width: 100%;
+  }
+}

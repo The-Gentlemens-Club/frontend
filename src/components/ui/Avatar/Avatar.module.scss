@@ -1,0 +1,12 @@
+
+.avatar {
+  @apply relative rounded-full overflow-hidden bg-background-elevated flex items-center justify-center;
+}
+
+.avatar-image {
+  @apply w-full h-full object-cover;
+}
+
+.avatar-initials {
+  @apply text-text-primary font-medium;
+}

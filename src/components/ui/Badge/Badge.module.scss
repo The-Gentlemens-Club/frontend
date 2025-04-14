@@ -1,0 +1,20 @@
+
+.badge {
+  @apply inline-flex items-center justify-center px-2.5 py-0.5 text-sm font-medium rounded-full;
+}
+
+.badge.default {
+  @apply bg-background-elevated text-text-primary;
+}
+
+.badge.success {
+  @apply bg-game-win/10 text-game-win;
+}
+
+.badge.warning {
+  @apply bg-game-draw/10 text-game-draw;
+}
+
+.badge.error {
+  @apply bg-game-lose/10 text-game-lose;
+}

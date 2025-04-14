@@ -1,0 +1,39 @@
+.user-level {
+  @apply p-4;
+}
+
+.user-level-header {
+  @apply flex justify-between items-center mb-2;
+}
+
+.user-level-info {
+  @apply flex items-center gap-2;
+}
+
+.user-level-title {
+  @apply text-xl font-semibold text-text-primary;
+}
+
+.user-level-exp {
+  @apply text-sm text-text-secondary;
+}
+
+.user-level-progress {
+  @apply mb-4;
+}
+
+.user-level-benefits {
+  @apply mt-4 text-sm text-text-secondary;
+}
+
+.user-level-benefits h4 {
+  @apply text-text-primary font-medium mb-2;
+}
+
+.user-level-benefits ul {
+  @apply space-y-1;
+}
+
+.user-level-benefits li {
+  @apply flex items-center gap-2;
+}

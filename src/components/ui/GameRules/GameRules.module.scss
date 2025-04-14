@@ -1,0 +1,57 @@
+
+.game-rules {
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__rule {
+    padding: 1rem;
+    background: var(--background-elevated);
+    border-radius: 0.5rem;
+  }
+
+  &__rule-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  &__rule-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  &__payout {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--background-elevated);
+  }
+
+  &__payout-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  &__payout-info {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+}

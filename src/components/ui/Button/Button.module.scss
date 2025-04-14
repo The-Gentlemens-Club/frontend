@@ -1,0 +1,28 @@
+
+.button {
+  @apply font-primary font-semibold rounded-md transition-all duration-200 cursor-pointer disabled:opacity-50;
+}
+
+.button.sm {
+  @apply px-4 py-2 text-sm;
+}
+
+.button.md {
+  @apply px-6 py-3 text-base;
+}
+
+.button.lg {
+  @apply px-8 py-4 text-lg;
+}
+
+.button.primary {
+  @apply bg-primary-main text-white border-none hover:bg-primary-dark;
+}
+
+.button.secondary {
+  @apply bg-background-elevated text-text-primary border-none hover:bg-background-paper;
+}
+
+.button.outline {
+  @apply bg-transparent text-primary-main border-2 border-primary-main hover:bg-primary-main/10;
+}

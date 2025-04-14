@@ -1,0 +1,12 @@
+
+.bet-amount {
+  @apply flex flex-col gap-4;
+}
+
+.bet-amount-quick {
+  @apply flex gap-2;
+}
+
+.bet-amount-quick button {
+  @apply flex-1;
+}

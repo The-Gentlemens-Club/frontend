@@ -1,0 +1,45 @@
+
+.statsCard {
+  padding: 1.5rem;
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--background-elevated);
+    border-radius: 0.5rem;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  &__value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+
+    &--positive {
+      color: var(--game-win);
+    }
+
+    &--negative {
+      color: var(--game-lose);
+    }
+  }
+}

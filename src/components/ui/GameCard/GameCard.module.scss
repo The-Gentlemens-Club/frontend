@@ -1,0 +1,35 @@
+.game-card {
+  @apply w-full max-w-sm overflow-hidden transition-transform hover:scale-105;
+}
+
+.game-card-image-container {
+  @apply relative;
+}
+
+.game-card-image {
+  @apply w-full h-48 object-cover rounded-t-lg;
+}
+
+.game-card-badges {
+  @apply absolute top-2 right-2 flex gap-2;
+}
+
+.game-card-content {
+  @apply p-4;
+}
+
+.game-card-title {
+  @apply text-xl font-semibold mb-2 text-text-primary;
+}
+
+.game-card-info {
+  @apply flex justify-between items-center mb-4;
+}
+
+.game-card-bet-info {
+  @apply text-sm text-text-secondary flex flex-col;
+}
+
+.game-card-button {
+  @apply w-full;
+}

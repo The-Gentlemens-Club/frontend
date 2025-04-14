@@ -1,0 +1,39 @@
+.bet-result {
+  @apply p-4;
+}
+
+.bet-result-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.bet-result-game {
+  @apply text-sm text-text-secondary;
+}
+
+.bet-result-details {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.bet-result-details .label {
+  @apply block text-xs text-text-secondary mb-1;
+}
+
+.bet-result-details .value {
+  @apply text-sm font-medium text-text-primary;
+}
+
+.bet-result-details .value.win {
+  @apply text-game-win;
+}
+
+.bet-result-details .value.lose {
+  @apply text-game-lose;
+}
+
+.bet-result-details .value.draw {
+  @apply text-game-draw;
+}
+
+.bet-result-time {
+  @apply mt-4 text-xs text-text-secondary text-right;
+}

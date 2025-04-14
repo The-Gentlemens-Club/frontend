@@ -1,0 +1,27 @@
+.input-container {
+  @apply flex flex-col;
+}
+
+.input-label {
+  @apply mb-2 text-sm font-medium text-text-secondary;
+}
+
+.input {
+  @apply bg-background-paper text-text-primary border-2 border-background-elevated rounded-md px-4 py-2 outline-none transition-all duration-200;
+}
+
+.input:focus {
+  @apply border-primary-main;
+}
+
+.input:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.input.error {
+  @apply border-game-lose;
+}
+
+.input-error {
+  @apply mt-1 text-sm text-game-lose;
+}

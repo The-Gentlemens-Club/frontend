@@ -1,0 +1,40 @@
+
+.progress-container {
+  @apply w-full bg-background-elevated rounded-full overflow-hidden relative;
+}
+
+.progress-container.sm {
+  @apply h-1;
+}
+
+.progress-container.md {
+  @apply h-2;
+}
+
+.progress-container.lg {
+  @apply h-4;
+}
+
+.progress-bar {
+  @apply h-full transition-all duration-300 ease-in-out;
+}
+
+.progress-bar.primary {
+  @apply bg-primary-main;
+}
+
+.progress-bar.success {
+  @apply bg-game-win;
+}
+
+.progress-bar.warning {
+  @apply bg-game-draw;
+}
+
+.progress-bar.error {
+  @apply bg-game-lose;
+}
+
+.progress-label {
+  @apply absolute right-0 -top-6 text-sm text-text-secondary;
+}

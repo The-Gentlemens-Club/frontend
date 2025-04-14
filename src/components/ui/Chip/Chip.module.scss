@@ -1,0 +1,85 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  font-weight: 500;
+  cursor: default;
+
+  &__label {
+    padding: 0 0.75rem;
+  }
+
+  &__delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.25rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &--sm {
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  &--md {
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  &--filled {
+    &.chip--default {
+      background-color: var(--background-elevated);
+      color: var(--text-primary);
+    }
+    &.chip--primary {
+      background-color: var(--primary-main);
+      color: var(--primary-contrastText);
+    }
+    &.chip--success {
+      background-color: var(--game-win);
+      color: white;
+    }
+    &.chip--warning {
+      background-color: var(--accent-gold);
+      color: black;
+    }
+    &.chip--error {
+      background-color: var(--game-lose);
+      color: white;
+    }
+  }
+
+  &--outlined {
+    background-color: transparent;
+    border: 1px solid;
+
+    &.chip--default {
+      border-color: var(--background-elevated);
+      color: var(--text-primary);
+    }
+    &.chip--primary {
+      border-color: var(--primary-main);
+      color: var(--primary-main);
+    }
+    &.chip--success {
+      border-color: var(--game-win);
+      color: var(--game-win);
+    }
+    &.chip--warning {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+    &.chip--error {
+      border-color: var(--game-lose);
+      color: var(--game-lose);
+    }
+  }
+}

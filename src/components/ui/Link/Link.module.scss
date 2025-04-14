@@ -1,0 +1,11 @@
+.link {
+  @apply font-primary transition-all duration-200;
+}
+
+.link.default {
+  @apply text-primary-main hover:text-primary-light hover:underline;
+}
+
+.link.button {
+  @apply inline-block px-6 py-3 bg-primary-main text-white rounded-lg hover:bg-primary-dark;
+}

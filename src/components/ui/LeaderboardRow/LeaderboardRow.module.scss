@@ -1,0 +1,24 @@
+
+.leaderboard-row {
+  @apply flex items-center justify-between p-4 bg-background-paper rounded-lg;
+}
+
+.leaderboard-rank {
+  @apply text-xl font-bold text-text-secondary min-w-[3rem];
+}
+
+.leaderboard-user {
+  @apply flex items-center gap-3 flex-1;
+}
+
+.leaderboard-username {
+  @apply text-text-primary font-medium;
+}
+
+.leaderboard-stats {
+  @apply flex items-center gap-4;
+}
+
+.leaderboard-games {
+  @apply text-sm text-text-secondary;
+}

@@ -1,0 +1,77 @@
+.tournament-card {
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  &__status {
+    text-transform: capitalize;
+  }
+
+  &__info {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--background-elevated);
+    border-radius: 0.375rem;
+  }
+
+  &__label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  &__value {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  &__prize {
+    color: var(--game-win);
+    font-weight: 600;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--background-elevated);
+  }
+
+  &__players {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__players-count {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  &__players-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+}

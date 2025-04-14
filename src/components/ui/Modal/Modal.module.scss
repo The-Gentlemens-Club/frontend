@@ -1,0 +1,23 @@
+.modal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm;
+}
+
+.modal {
+  @apply bg-background-paper rounded-lg p-6 max-w-lg w-full mx-4 shadow-xl;
+}
+
+.modal-header {
+  @apply flex justify-between items-center mb-4;
+}
+
+.modal-title {
+  @apply text-xl font-semibold text-text-primary;
+}
+
+.modal-close {
+  @apply text-text-secondary hover:text-text-primary transition-colors;
+}
+
+.modal-content {
+  @apply text-text-primary;
+}

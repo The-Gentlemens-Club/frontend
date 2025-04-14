@@ -1,0 +1,12 @@
+
+.countdown {
+  @apply inline-flex items-center font-mono text-2xl font-bold text-text-primary;
+}
+
+.countdown-number {
+  @apply bg-background-paper px-3 py-2 rounded-md;
+}
+
+.countdown-separator {
+  @apply mx-2 text-text-secondary;
+}

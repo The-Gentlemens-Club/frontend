@@ -1,0 +1,53 @@
+.game-clock {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--background-elevated);
+
+  &__display {
+    position: relative;
+    z-index: 1;
+    font-family: monospace;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    transition: width 10ms linear;
+    opacity: 0.15;
+  }
+
+  // Sizes
+  &--sm {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  &--md {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  &--lg {
+    padding: 1rem;
+    font-size: 1.25rem;
+  }
+
+  // Variants
+  &--primary &__progress {
+    background: var(--primary-main);
+  }
+
+  &--warning &__progress {
+    background: var(--accent-gold);
+  }
+
+  &--danger &__progress {
+    background: var(--error-main);
+  }
+}

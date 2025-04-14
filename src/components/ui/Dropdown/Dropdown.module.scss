@@ -1,0 +1,28 @@
+
+.dropdown {
+  @apply relative;
+}
+
+.dropdown-trigger {
+  @apply w-full px-4 py-2 bg-background-paper text-text-primary border-2 border-background-elevated rounded-md flex justify-between items-center hover:bg-background-elevated transition-colors;
+}
+
+.dropdown-arrow {
+  @apply transform transition-transform;
+}
+
+.dropdown-arrow.open {
+  @apply rotate-180;
+}
+
+.dropdown-content {
+  @apply absolute z-50 w-full mt-1 bg-background-paper border-2 border-background-elevated rounded-md shadow-lg;
+}
+
+.dropdown-option {
+  @apply w-full px-4 py-2 text-left hover:bg-background-elevated transition-colors text-text-primary;
+}
+
+.dropdown-option.selected {
+  @apply text-primary-main;
+}

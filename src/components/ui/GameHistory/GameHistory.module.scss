@@ -1,0 +1,15 @@
+.game-history {
+  @apply p-4;
+}
+
+.game-history-title {
+  @apply text-xl font-semibold mb-4 text-text-primary;
+}
+
+.game-history-list {
+  @apply space-y-4;
+}
+
+.game-history-empty {
+  @apply text-text-secondary text-center py-8;
+}

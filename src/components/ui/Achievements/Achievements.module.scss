@@ -1,0 +1,59 @@
+.achievements {
+  @apply p-6;
+}
+
+.achievements-title {
+  @apply text-2xl font-semibold mb-6 text-text-primary;
+}
+
+.achievements-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.achievement-item {
+  @apply flex gap-4 p-4 rounded-lg bg-background-elevated transition-all;
+}
+
+.achievement-item.completed {
+  @apply bg-game-win/5;
+}
+
+.achievement-icon {
+  @apply relative flex-shrink-0 w-16 h-16 rounded-lg bg-background-paper flex items-center justify-center;
+}
+
+.achievement-icon img {
+  @apply w-10 h-10;
+}
+
+.achievement-completed-badge {
+  @apply absolute -top-2 -right-2;
+}
+
+.achievement-info {
+  @apply flex-1;
+}
+
+.achievement-title {
+  @apply text-lg font-medium mb-1 text-text-primary;
+}
+
+.achievement-description {
+  @apply text-sm text-text-secondary mb-3;
+}
+
+.achievement-progress {
+  @apply mb-2;
+}
+
+.achievement-stats {
+  @apply flex justify-between items-center text-sm;
+}
+
+.achievement-progress-text {
+  @apply text-text-secondary;
+}
+
+.achievement-reward {
+  @apply text-game-win font-medium;
+}

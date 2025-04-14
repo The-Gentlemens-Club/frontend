@@ -1,0 +1,25 @@
+
+.tabs-container {
+  @apply w-full;
+}
+
+.tabs-header {
+  @apply flex border-b border-background-elevated;
+}
+
+.tab-button {
+  @apply px-4 py-2 text-text-secondary hover:text-text-primary transition-colors relative;
+}
+
+.tab-button.active {
+  @apply text-primary-main;
+}
+
+.tab-button.active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary-main;
+}
+
+.tabs-content {
+  @apply mt-4;
+}
