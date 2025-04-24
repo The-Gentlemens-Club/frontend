@@ -1,8 +1,5 @@
 import { ethers } from 'ethers';
-import { useAccount, useContractRead, useContractWrite } from 'wagmi';
 import { toast } from 'react-hot-toast';
-
-// Contract ABIs
 import { gameABI } from '../abis/game';
 import { tokenABI } from '../abis/token';
 
@@ -11,81 +8,118 @@ const GAME_CONTRACT = process.env.NEXT_PUBLIC_GAME_CONTRACT || '';
 const TOKEN_CONTRACT = process.env.NEXT_PUBLIC_TOKEN_CONTRACT || '';
 
 export const useGameContract = () => {
-  const { address } = useAccount();
-
-  const { data: gameState, isLoading: isLoadingGameState } = useContractRead({
-    address: GAME_CONTRACT as `0x${string}`,
-    abi: gameABI,
-    functionName: 'getGameState',
-    args: [address],
-    query: {
-      enabled: !!address
+  const getProvider = () => {
+    if (typeof window !== 'undefined' && window.ethereum) {
+      return new ethers.BrowserProvider(window.ethereum);
     }
-  });
+    return null;
+  };
 
-  const { write: startGame, isLoading: isStartingGame } = useContractWrite({
-    address: GAME_CONTRACT as `0x${string}`,
-    abi: gameABI,
-    functionName: 'startGame',
-    onSuccess: () => {
+  const getSigner = async () => {
+    const provider = getProvider();
+    if (!provider) return null;
+    return await provider.getSigner();
+  };
+
+  const getGameContract = async () => {
+    const signer = await getSigner();
+    if (!signer) return null;
+    return new ethers.Contract(GAME_CONTRACT, gameABI, signer);
+  };
+
+  const getTokenContract = async () => {
+    const signer = await getSigner();
+    if (!signer) return null;
+    return new ethers.Contract(TOKEN_CONTRACT, tokenABI, signer);
+  };
+
+  const startGame = async () => {
+    try {
+      const contract = await getGameContract();
+      if (!contract) throw new Error('No contract instance');
+      const tx = await contract.startGame();
+      await tx.wait();
       toast.success('Game started successfully!');
-    },
-    onError: (error) => {
+    } catch (error) {
       toast.error(`Failed to start game: ${error.message}`);
-    },
-  });
+    }
+  };
 
-  const { write: placeBet, isLoading: isPlacingBet } = useContractWrite({
-    address: GAME_CONTRACT as `0x${string}`,
-    abi: gameABI,
-    functionName: 'placeBet',
-    onSuccess: () => {
+  const placeBet = async (amount: bigint) => {
+    try {
+      const contract = await getGameContract();
+      if (!contract) throw new Error('No contract instance');
+      const tx = await contract.placeBet(amount);
+      await tx.wait();
       toast.success('Bet placed successfully!');
-    },
-    onError: (error) => {
+    } catch (error) {
       toast.error(`Failed to place bet: ${error.message}`);
-    },
-  });
+    }
+  };
+
+  const getGameState = async (address: string) => {
+    try {
+      const contract = await getGameContract();
+      if (!contract) throw new Error('No contract instance');
+      return await contract.getGameState(address);
+    } catch (error) {
+      toast.error(`Failed to get game state: ${error.message}`);
+      return null;
+    }
+  };
 
   return {
-    gameState,
-    isLoadingGameState,
     startGame,
-    isStartingGame,
     placeBet,
-    isPlacingBet,
+    getGameState,
   };
 };
 
 export const useTokenContract = () => {
-  const { address } = useAccount();
-
-  const { data: balance, isLoading: isLoadingBalance } = useContractRead({
-    address: TOKEN_CONTRACT as `0x${string}`,
-    abi: tokenABI,
-    functionName: 'balanceOf',
-    args: [address],
-    query: {
-      enabled: !!address
+  const getProvider = () => {
+    if (typeof window !== 'undefined' && window.ethereum) {
+      return new ethers.BrowserProvider(window.ethereum);
     }
-  });
+    return null;
+  };
 
-  const { write: approve, isLoading: isApproving } = useContractWrite({
-    address: TOKEN_CONTRACT as `0x${string}`,
-    abi: tokenABI,
-    functionName: 'approve',
-    onSuccess: () => {
+  const getSigner = async () => {
+    const provider = getProvider();
+    if (!provider) return null;
+    return await provider.getSigner();
+  };
+
+  const getTokenContract = async () => {
+    const signer = await getSigner();
+    if (!signer) return null;
+    return new ethers.Contract(TOKEN_CONTRACT, tokenABI, signer);
+  };
+
+  const getBalance = async (address: string) => {
+    try {
+      const contract = await getTokenContract();
+      if (!contract) throw new Error('No contract instance');
+      return await contract.balanceOf(address);
+    } catch (error) {
+      toast.error(`Failed to get balance: ${error.message}`);
+      return null;
+    }
+  };
+
+  const approve = async (spender: string, amount: bigint) => {
+    try {
+      const contract = await getTokenContract();
+      if (!contract) throw new Error('No contract instance');
+      const tx = await contract.approve(spender, amount);
+      await tx.wait();
       toast.success('Token approval successful!');
-    },
-    onError: (error) => {
+    } catch (error) {
       toast.error(`Failed to approve tokens: ${error.message}`);
-    },
-  });
+    }
+  };
 
   return {
-    balance,
-    isLoadingBalance,
+    getBalance,
     approve,
-    isApproving,
   };
 }; 
