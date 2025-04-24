@@ -6,7 +6,7 @@ import styles from "./BetResult.module.scss";
 
 interface BetResultProps {
   outcome: "win" | "lose" | "draw";
-  amount: BigNumber;
+  amount: bigint;
   multiplier: number;
   game: string;
   timestamp: Date;
@@ -23,7 +23,7 @@ export const BetResult: React.FC<BetResultProps> = ({
 }) => {
   const resultAmount = ethers.formatEther(
     outcome === "win"
-      ? amount.mul(Math.floor(multiplier * 100)).div(100)
+      ? amount * BigInt(Math.floor(multiplier * 100)) / BigInt(100)
       : amount,
   );
 
@@ -48,16 +48,23 @@ export const BetResult: React.FC<BetResultProps> = ({
           <span className="label">Amount</span>
           <span className="value">{ethers.formatEther(amount)} GTLM</span>
         </div>
-        <div className="bet-result-multiplier">
-          <span className="label">Multiplier</span>
-          <span className="value">{multiplier}x</span>
-        </div>
-        <div className="bet-result-final">
-          <span className="label">Final</span>
-          <span className={`value ${outcome}`}>{resultAmount} GTLM</span>
+        {outcome === "win" && (
+          <div className="bet-result-multiplier">
+            <span className="label">Multiplier</span>
+            <span className="value">{multiplier}x</span>
+          </div>
+        )}
+        <div className="bet-result-total">
+          <span className="label">Total</span>
+          <span className="value">{resultAmount} GTLM</span>
         </div>
       </div>
-      <div className="bet-result-time">{timestamp.toLocaleString()}</div>
+      <div className="bet-result-footer">
+        <span className="bet-result-timestamp">
+          {timestamp.toLocaleString()}
+        </span>
+      </div>
     </Card>
   );
 };
+

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import { GameChat } from '../GameChat';
-import { GameClock } from '../GameClock';
-import { GameStats } from '../GameStats';
-import { Button } from '../Button';
-import { LoadingSpinner } from '../LoadingSpinner';
 import { useRouter } from 'next/router';
+import { LoadingSpinner } from '../LoadingSpinner';
+import { Button } from '../Button/Button';
+import { GameClock } from '../GameClock/GameClock';
+import { GameStats } from '../GameStats/GameStats';
+import { GameChat } from '../GameChat/GameChat';
 
 interface GameLobbyProps {
   gameId: string;

@@ -1,4 +1,4 @@
-import { LoadingSpinner } from '../LoadingSpinner';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 interface LoadingStateProps {
   isLoading: boolean;
@@ -24,7 +24,7 @@ export const LoadingState = ({
   return (
     <div className={containerClasses}>
       <div className="flex flex-col items-center">
-        <LoadingSpinner size="large" />
+        <LoadingSpinner size="lg" />
         <p className="mt-4 text-white text-lg">{message}</p>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useAccount } from 'wagmi';
-import { Button } from '../Button';
-import { Input } from '../Input';
-import { Modal } from '../Modal';
-import { LoadingSpinner } from '../LoadingSpinner';
+import { Button } from '../Button/Button';
+import { Input } from '../Input/Input';
+import { Modal } from '../Modal/Modal';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 import { useRouter } from 'next/router';
 
 interface Tournament {
