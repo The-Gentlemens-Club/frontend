@@ -31,7 +31,12 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
         isCurrentUser ? styles.messageSelf : ""
       } ${className}`}
     >
-      <Avatar src={avatarUrl} size="small" className={styles.avatar} />
+      <Avatar 
+        src={avatarUrl} 
+        alt={`${username}'s avatar`} 
+        size="small" 
+        className={styles.avatar} 
+      />
       <div className={styles.content}>
         <div className={styles.header}>
           <span
