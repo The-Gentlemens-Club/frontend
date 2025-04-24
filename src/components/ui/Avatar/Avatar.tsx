@@ -1,23 +1,24 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './Avatar.module.scss';
 
 interface AvatarProps {
-  src?: string;
-  alt?: string;
-  size?: 'sm' | 'md' | 'lg';
+  src: string;
+  alt: string;
+  size?: 'small' | 'medium' | 'large';
   className?: string;
 }
 
 export const Avatar: React.FC<AvatarProps> = ({
   src,
-  alt = 'Avatar',
-  size = 'md',
+  alt,
+  size = 'medium',
   className = '',
 }) => {
-  const sizes = {
-    sm: 'w-8 h-8',
-    md: 'w-12 h-12',
-    lg: 'w-16 h-16'
+  const sizeMap = {
+    small: 32,
+    medium: 48,
+    large: 64,
   };
 
   const getInitials = (name: string) => {
@@ -30,11 +31,13 @@ export const Avatar: React.FC<AvatarProps> = ({
   };
 
   return (
-    <div className={`${styles.avatar} ${sizes[size]} ${className}`}>
+    <div className={`${styles.avatar} ${styles[size]} ${className}`}>
       {src ? (
-        <img
+        <Image
           src={src}
           alt={alt}
+          width={sizeMap[size]}
+          height={sizeMap[size]}
           className={styles.image}
         />
       ) : (

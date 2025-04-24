@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Card } from "../Card/Card";
 import { Button } from "../Button/Button";
 import { Progress } from "../Progress/Progress";
@@ -31,37 +32,46 @@ export const RewardsList: React.FC<RewardsListProps> = ({
       <h3 className="rewards-title">Available Rewards</h3>
       <div className="rewards-grid">
         {rewards.map((reward) => (
-          <div key={reward.id} className="reward-item">
-            <div className="reward-image-container">
-              <img
+          <div
+            key={reward.id}
+            className={`${styles.card} ${
+              !reward.isAvailable ? styles.disabled : ''
+            }`}
+          >
+            <div className={styles.imageContainer}>
+              <Image
                 src={reward.image}
                 alt={reward.title}
-                className="reward-image"
+                width={100}
+                height={100}
+                className={styles.image}
               />
-              <span className="reward-points">{reward.points} Points</span>
             </div>
-            <div className="reward-content">
-              <h4 className="reward-title">{reward.title}</h4>
-              <p className="reward-description">{reward.description}</p>
-              <Progress
-                value={(reward.progress / reward.maxProgress) * 100}
-                size="sm"
-                color={reward.isAvailable ? "success" : "primary"}
-                className="reward-progress"
-              />
-              <div className="reward-footer">
-                <span className="reward-progress-text">
-                  Progress: {reward.progress}/{reward.maxProgress}
-                </span>
-                <Button
-                  variant={reward.isAvailable ? "primary" : "secondary"}
-                  size="sm"
-                  disabled={!reward.isAvailable}
-                  onClick={() => onClaimReward(reward.id)}
-                >
-                  {reward.isAvailable ? "Claim Reward" : "In Progress"}
-                </Button>
+            <div className={styles.content}>
+              <h4 className={styles.title}>{reward.title}</h4>
+              <p className={styles.description}>{reward.description}</p>
+              <div className={styles.points}>
+                <span>{reward.points} points</span>
               </div>
+              <div className={styles.progress}>
+                <div
+                  className={styles.progressBar}
+                  style={{
+                    width: `${(reward.progress / reward.maxProgress) * 100}%`,
+                  }}
+                />
+                <span className={styles.progressText}>
+                  {reward.progress}/{reward.maxProgress}
+                </span>
+              </div>
+              <Button
+                variant={reward.isAvailable ? "primary" : "secondary"}
+                size="sm"
+                disabled={!reward.isAvailable}
+                onClick={() => onClaimReward(reward.id)}
+              >
+                {reward.isAvailable ? "Claim Reward" : "In Progress"}
+              </Button>
             </div>
           </div>
         ))}

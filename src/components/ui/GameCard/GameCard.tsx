@@ -5,6 +5,7 @@ import { Button } from "../Button/Button";
 import type { Game } from "../../../types/global";
 import { ethers } from "ethers";
 import styles from "./GameCard.module.scss";
+import Image from 'next/image';
 
 interface GameCardProps {
   game: Game;
@@ -20,9 +21,11 @@ export const GameCard: React.FC<GameCardProps> = ({
   return (
     <Card className={`game-card ${className}`} hoverable>
       <div className="game-card-image-container">
-        <img
+        <Image
           src={game.thumbnailUrl}
           alt={game.name}
+          width={300}
+          height={200}
           className="game-card-image"
         />
         <div className="game-card-badges">

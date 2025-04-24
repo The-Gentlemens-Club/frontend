@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Card } from '../Card/Card';
 import { Progress } from '../Progress/Progress';
 import styles from './AchievementCard.module.scss';
@@ -6,7 +7,7 @@ import styles from './AchievementCard.module.scss';
 interface AchievementCardProps {
   title: string;
   description: string;
-  icon: string;
+  image: string;
   progress: number;
   maxProgress: number;
   reward: string;
@@ -16,7 +17,7 @@ interface AchievementCardProps {
 export const AchievementCard: React.FC<AchievementCardProps> = ({
   title,
   description,
-  icon,
+  image,
   progress,
   maxProgress,
   reward,
@@ -28,7 +29,13 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({
     <Card className={`achievement-card ${isCompleted ? 'achievement-card--completed' : ''}`}>
       <div className="achievement-card__header">
         <div className="achievement-card__icon">
-          <img src={icon} alt={title} />
+          <Image
+            src={image}
+            alt={title}
+            width={64}
+            height={64}
+            className={styles.image}
+          />
           {isCompleted && (
             <div className="achievement-card__completed-badge">
               <span>✓</span>
