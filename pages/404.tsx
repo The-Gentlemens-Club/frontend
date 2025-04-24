@@ -1,18 +1,21 @@
-import React from 'react';
+import { Layout } from '../src/components/layout/Layout';
 import Link from 'next/link';
 
-const NotFoundPage: React.FC = () => {
+export default function Custom404() {
   return (
-    <div className="min-h-[60vh] flex items-center justify-center">
-      <div className="text-center">
+    <Layout>
+      <div className="flex flex-col items-center justify-center min-h-[60vh]">
         <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
-        <p className="text-text-secondary mb-6">The page you're looking for doesn't exist.</p>
-        <Link href="/" className="text-primary-main hover:text-primary-light">
-          Return to Home
+        <p className="text-gray-400 mb-8">
+          The page you&apos;re looking for doesn&apos;t exist.
+        </p>
+        <Link
+          href="/"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Return Home
         </Link>
       </div>
-    </div>
+    </Layout>
   );
-};
-
-export default NotFoundPage;
+}

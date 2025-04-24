@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Card } from '../../src/components/ui/Card/Card';
@@ -51,7 +50,7 @@ const SignInPage: React.FC = () => {
           </Button>
 
           <div className="text-center">
-            <span className="text-text-secondary">Don't have an account? </span>
+            <span className="text-text-secondary">Don&apos;t have an account? </span>
             <Link href="/auth/signup" variant="default">
               Sign up
             </Link>

@@ -1,0 +1,25 @@
+.simpleStatsCard {
+  padding: 1.5rem;
+  height: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+  }
+
+  &__value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+  }
+} 
