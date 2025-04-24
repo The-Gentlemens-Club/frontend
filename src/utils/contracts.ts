@@ -18,7 +18,9 @@ export const useGameContract = () => {
     abi: gameABI,
     functionName: 'getGameState',
     args: [address],
-    enabled: !!address,
+    query: {
+      enabled: !!address
+    }
   });
 
   const { write: startGame, isLoading: isStartingGame } = useContractWrite({
@@ -63,7 +65,9 @@ export const useTokenContract = () => {
     abi: tokenABI,
     functionName: 'balanceOf',
     args: [address],
-    enabled: !!address,
+    query: {
+      enabled: !!address
+    }
   });
 
   const { write: approve, isLoading: isApproving } = useContractWrite({
