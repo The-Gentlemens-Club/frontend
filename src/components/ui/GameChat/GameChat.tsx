@@ -40,8 +40,8 @@ export const GameChat: React.FC<GameChatProps> = ({
           <div key={message.id} className="game-chat-message">
             <Avatar
               src={message.avatar}
-              name={message.sender}
-              size="sm"
+              alt={message.sender}
+              size="small"
               className="game-chat-avatar"
             />
             <div className="game-chat-content">
