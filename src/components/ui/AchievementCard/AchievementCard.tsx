@@ -49,7 +49,11 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({
       </div>
 
       <div className="achievement-card__progress-container">
-        <Progress value={progressPercentage} color={isCompleted ? 'success' : 'primary'} />
+        <Progress
+          value={progressPercentage}
+          variant={isCompleted ? 'success' : 'primary'}
+          size="sm"
+        />
         <span className="achievement-card__progress-text">
           {progress}/{maxProgress}
         </span>

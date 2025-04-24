@@ -35,7 +35,8 @@ const ProfilePage: React.FC = () => {
       image: '/achievements/first-win.png',
       progress: 1,
       maxProgress: 1,
-      isUnlocked: true,
+      isCompleted: true,
+      reward: '100 XP',
     },
     {
       id: '2',
@@ -44,7 +45,8 @@ const ProfilePage: React.FC = () => {
       image: '/achievements/poker-master.png',
       progress: 7,
       maxProgress: 10,
-      isUnlocked: false,
+      isCompleted: false,
+      reward: '500 XP',
     },
     {
       id: '3',
@@ -53,7 +55,8 @@ const ProfilePage: React.FC = () => {
       image: '/achievements/high-roller.png',
       progress: 0,
       maxProgress: 1,
-      isUnlocked: false,
+      isCompleted: false,
+      reward: '1000 XP',
     },
   ];
 
