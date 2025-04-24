@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Avatar } from '../Avatar/Avatar';
 import { Badge } from '../Badge/Badge';
@@ -26,7 +25,11 @@ export const LeaderboardRow: React.FC<LeaderboardRowProps> = ({
     <div className={`leaderboard-row ${className}`}>
       <div className="leaderboard-rank">#{rank}</div>
       <div className="leaderboard-user">
-        <Avatar address={address} size="sm" />
+        <Avatar 
+          src={`https://api.dicebear.com/7.x/identicon/svg?seed=${address}`}
+          alt={username || address}
+          size="small" 
+        />
         <span className="leaderboard-username">{username || address.slice(0, 6) + '...' + address.slice(-4)}</span>
       </div>
       <div className="leaderboard-stats">
