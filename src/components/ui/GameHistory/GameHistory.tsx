@@ -2,14 +2,13 @@ import React from "react";
 import { Card } from "../Card/Card";
 import { BetResult } from "../BetResult/BetResult";
 import { ethers } from "ethers";
-import BigNumber from "bignumber.js";
 import styles from "./GameHistory.module.scss";
 
 interface GameHistoryProps {
   history: {
     id: string;
     game: string;
-    bet: BigNumber;
+    bet: bigint;
     multiplier: number;
     outcome: "win" | "lose" | "draw";
     timestamp: Date;
