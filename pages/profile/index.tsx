@@ -17,13 +17,18 @@ const ProfilePage: React.FC = () => {
 
   // Mock data for player profile
   const playerProfileData = {
-    username: 'Player1',
-    avatarUrl: '/avatars/default.png',
+    username: 'Player123',
+    avatarUrl: 'https://api.dicebear.com/7.x/identicon/svg?seed=Player123',
     level: 5,
-    xp: 2500,
+    xp: 1250,
     totalWins: 42,
     totalBets: 100,
     joinedDate: new Date('2023-01-01'),
+    nextLevelExperience: 2000,
+    rank: 'Silver',
+    walletBalance: '1.234',
+    walletSymbol: 'ETH',
+    walletIcon: '/icons/ethereum.svg'
   };
 
   // Mock data for achievements

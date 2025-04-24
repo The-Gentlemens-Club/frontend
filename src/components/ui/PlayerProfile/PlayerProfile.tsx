@@ -13,6 +13,11 @@ interface PlayerProfileProps {
   totalWins: number;
   totalBets: number;
   joinedDate: Date;
+  nextLevelExperience: number;
+  rank: string;
+  walletBalance: string;
+  walletSymbol: string;
+  walletIcon: string;
 }
 
 export const PlayerProfile: React.FC<PlayerProfileProps> = ({
@@ -23,6 +28,11 @@ export const PlayerProfile: React.FC<PlayerProfileProps> = ({
   totalWins,
   totalBets,
   joinedDate,
+  nextLevelExperience,
+  rank,
+  walletBalance,
+  walletSymbol,
+  walletIcon,
 }) => {
   return (
     <Card className="player-profile">
@@ -30,7 +40,12 @@ export const PlayerProfile: React.FC<PlayerProfileProps> = ({
         <Avatar src={avatarUrl} size="large" alt={username} />
         <div className="player-profile__info">
           <h2 className="player-profile__username">{username}</h2>
-          <UserLevel level={level} xp={xp} />
+          <UserLevel 
+            level={level} 
+            experience={xp} 
+            nextLevelExperience={nextLevelExperience}
+            rank={rank}
+          />
         </div>
       </div>
       <div className="player-profile__stats">
@@ -49,7 +64,11 @@ export const PlayerProfile: React.FC<PlayerProfileProps> = ({
           </span>
         </div>
       </div>
-      <WalletBalance />
+      <WalletBalance 
+        balance={walletBalance}
+        symbol={walletSymbol}
+        icon={walletIcon}
+      />
       <div className="player-profile__footer">
         <span className="player-profile__joined">
           Joined {joinedDate.toLocaleDateString()}
