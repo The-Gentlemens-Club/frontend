@@ -1,11 +1,11 @@
 import { Layout } from '../../src/components/layout/Layout';
 import { useAccount } from 'wagmi';
 import { useState } from 'react';
-import { Input } from '../../src/components/ui/Input';
-import { Button } from '../../src/components/ui/Button';
-import { Switch } from '../../src/components/ui/Switch';
-import { LoadingSpinner } from '../../src/components/ui/LoadingSpinner';
-import { Modal } from '../../src/components/ui/Modal';
+import { Input } from '../../src/components/ui/Input/Input';
+import { Button } from '../../src/components/ui/Button/Button';
+import { Switch } from '../../src/components/ui/Switch/Switch';
+import { LoadingSpinner } from '../../src/components/ui/LoadingSpinner/LoadingSpinner';
+import { Modal } from '../../src/components/ui/Modal/Modal';
 
 interface Settings {
   username: string;
@@ -94,58 +94,66 @@ export default function Settings() {
           <div>
             <h2 className="text-xl font-semibold text-white mb-4">Notifications</h2>
             <div className="space-y-4">
-              <Switch
-                label="Game Start"
-                checked={settings.notifications.gameStart}
-                onChange={(checked) =>
-                  setSettings({
-                    ...settings,
-                    notifications: {
-                      ...settings.notifications,
-                      gameStart: checked,
-                    },
-                  })
-                }
-              />
-              <Switch
-                label="Tournament Start"
-                checked={settings.notifications.tournamentStart}
-                onChange={(checked) =>
-                  setSettings({
-                    ...settings,
-                    notifications: {
-                      ...settings.notifications,
-                      tournamentStart: checked,
-                    },
-                  })
-                }
-              />
-              <Switch
-                label="Win Notifications"
-                checked={settings.notifications.win}
-                onChange={(checked) =>
-                  setSettings({
-                    ...settings,
-                    notifications: {
-                      ...settings.notifications,
-                      win: checked,
-                    },
-                  })
-                }
-              />
-              <Switch
-                label="Loss Notifications"
-                checked={settings.notifications.loss}
-                onChange={(checked) =>
-                  setSettings({
-                    ...settings,
-                    notifications: {
-                      ...settings.notifications,
-                      loss: checked,
-                    },
-                  })
-                }
-              />
+              <div className="flex items-center justify-between">
+                <span className="text-white">Game Start</span>
+                <Switch
+                  checked={settings.notifications.gameStart}
+                  onChange={(checked) =>
+                    setSettings({
+                      ...settings,
+                      notifications: {
+                        ...settings.notifications,
+                        gameStart: checked,
+                      },
+                    })
+                  }
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-white">Tournament Start</span>
+                <Switch
+                  checked={settings.notifications.tournamentStart}
+                  onChange={(checked) =>
+                    setSettings({
+                      ...settings,
+                      notifications: {
+                        ...settings.notifications,
+                        tournamentStart: checked,
+                      },
+                    })
+                  }
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-white">Win Notifications</span>
+                <Switch
+                  checked={settings.notifications.win}
+                  onChange={(checked) =>
+                    setSettings({
+                      ...settings,
+                      notifications: {
+                        ...settings.notifications,
+                        win: checked,
+                      },
+                    })
+                  }
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-white">Loss Notifications</span>
+                <Switch
+                  checked={settings.notifications.loss}
+                  onChange={(checked) =>
+                    setSettings({
+                      ...settings,
+                      notifications: {
+                        ...settings.notifications,
+                        loss: checked,
+                      },
+                    })
+                  }
+                />
+              </div>
             </div>
           </div>
 

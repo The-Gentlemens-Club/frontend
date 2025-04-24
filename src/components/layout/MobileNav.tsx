@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/Button/Button';
 import { WalletConnect } from '../ui/WalletConnect';
 
 const navigation = [

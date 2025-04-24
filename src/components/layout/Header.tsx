@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const { address } = useAccount();
   const { data: balance } = useBalance({
     address,
-    token: process.env.NEXT_PUBLIC_GTLM_TOKEN_ADDRESS,
+    token: process.env.NEXT_PUBLIC_GTLM_TOKEN_ADDRESS as `0x${string}`,
   });
 
   return (

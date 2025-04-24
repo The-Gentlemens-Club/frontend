@@ -15,16 +15,61 @@ const ProfilePage: React.FC = () => {
     );
   }
 
+  // Mock data for player profile
+  const playerProfileData = {
+    username: 'Player1',
+    avatarUrl: '/avatars/default.png',
+    level: 5,
+    xp: 2500,
+    totalWins: 42,
+    totalBets: 100,
+    joinedDate: new Date('2023-01-01'),
+  };
+
+  // Mock data for achievements
+  const achievementsData = [
+    {
+      id: '1',
+      title: 'First Win',
+      description: 'Win your first game',
+      icon: '/achievements/first-win.png',
+      progress: 1,
+      maxProgress: 1,
+      completed: true,
+      reward: '100 XP',
+    },
+    {
+      id: '2',
+      title: 'Poker Master',
+      description: 'Win 10 poker games',
+      icon: '/achievements/poker-master.png',
+      progress: 7,
+      maxProgress: 10,
+      completed: false,
+      reward: '500 XP',
+    },
+    {
+      id: '3',
+      title: 'High Roller',
+      description: 'Place a bet of 1 ETH or more',
+      icon: '/achievements/high-roller.png',
+      progress: 0,
+      maxProgress: 1,
+      completed: false,
+      reward: '1000 XP',
+    },
+  ];
+
   return (
     <div className="py-8">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div>
-          <PlayerProfile />
+          <PlayerProfile {...playerProfileData} />
         </div>
         <div className="lg:col-span-2">
           <GameHistory history={[]} />
           <div className="mt-6">
-            <Achievements />
+            <Achievements achievements={achievementsData} />
           </div>
         </div>
       </div>
