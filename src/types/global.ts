@@ -1,4 +1,3 @@
-
 import BigNumber from 'bignumber.js';
 
 export interface UserProfile {
@@ -16,8 +15,8 @@ export interface Game {
   id: string;
   name: string;
   type: 'slots' | 'poker' | 'blackjack' | 'roulette';
-  minBet: BigNumber;
-  maxBet: BigNumber;
+  minBet: bigint;
+  maxBet: bigint;
   isLive: boolean;
   players: number;
   thumbnailUrl: string;
