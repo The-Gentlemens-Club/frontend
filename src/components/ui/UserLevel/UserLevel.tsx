@@ -33,7 +33,7 @@ export const UserLevel: React.FC<UserLevelProps> = ({
       <Progress
         value={progress}
         className="user-level-progress"
-        color="success"
+        variant="success"
       />
       <div className="user-level-benefits">
         <h4>Level Benefits:</h4>
