@@ -20,28 +20,12 @@ export const GameStats: React.FC<GameStatsProps> = ({
   return (
     <div className={`game-stats ${className}`}>
       <StatsCard
-        label="Total Games"
-        value={totalGames}
-        icon={<span>🎮</span>}
-      />
-      <StatsCard
-        label="Win Rate"
-        value={`${winRate}%`}
-        trend={{
-          value: 5.2,
-          isPositive: true,
-        }}
-        icon={<span>📈</span>}
-      />
-      <StatsCard
-        label="Highest Win"
-        value={highestWin}
-        icon={<span>🏆</span>}
-      />
-      <StatsCard
-        label="Current Streak"
-        value={currentStreak}
-        icon={<span>🔥</span>}
+        totalWager="0"
+        totalWins={currentStreak}
+        totalGames={totalGames}
+        profitLoss="0"
+        winRate={winRate}
+        highestWin={highestWin}
       />
     </div>
   );

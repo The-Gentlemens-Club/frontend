@@ -68,3 +68,4 @@ export const BetResult: React.FC<BetResultProps> = ({
   );
 };
 
+

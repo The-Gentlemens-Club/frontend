@@ -120,9 +120,25 @@ export const GameLobby = ({
         </div>
 
         <div className="w-full md:w-80">
-          <GameChat gameId={gameId} />
-          <GameClock countdown={countdown} />
-          <GameStats gameId={gameId} />
+          <GameChat 
+            messages={[]} 
+            onSendMessage={(content) => {
+              // TODO: Implement chat functionality
+              console.log('Sending message:', content);
+            }} 
+          />
+          <GameClock 
+            startTime={countdown} 
+            isRunning={true}
+            variant="primary"
+            size="md"
+          />
+          <GameStats 
+            totalGames={0}
+            winRate={0}
+            highestWin="0 GTLM"
+            currentStreak={0}
+          />
         </div>
       </div>
     </div>
