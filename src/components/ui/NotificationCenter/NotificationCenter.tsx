@@ -27,6 +27,19 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
 }) => {
   const unreadCount = notifications.filter(n => !n.isRead).length;
 
+  const getBadgeVariant = (type: Notification['type']): 'default' | 'success' | 'warning' | 'error' => {
+    switch (type) {
+      case 'info':
+        return 'default';
+      case 'success':
+      case 'warning':
+      case 'error':
+        return type;
+      default:
+        return 'default';
+    }
+  };
+
   return (
     <Card className={`notification-center ${className}`}>
       <div className="notification-header">
@@ -64,7 +77,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                   {notification.timestamp.toLocaleString()}
                 </span>
               </div>
-              <Badge variant={notification.type} className="notification-type-badge">
+              <Badge variant={getBadgeVariant(notification.type)} className="notification-type-badge">
                 {notification.type}
               </Badge>
             </div>
